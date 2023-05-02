@@ -5,10 +5,15 @@
 To develop an LSTM-based model for recognizing the named entities in the text.
 
 ## Problem Statement and Dataset
-We aim to develop an LSTM-based neural network model using Bidirectional Recurrent Neural Networks for recognizing the named entities in the text. The dataset used has a number of sentences, and each words have their tags. We have to vectorize these words using Embedding techniques to train our model.Bidirectional Recurrent Neural Networks connect two hidden layers of opposite directions to the same output.
-![image](https://user-images.githubusercontent.com/93427237/235588954-f733a2ec-a679-410f-b95c-8cc255aa1939.png)
+- We aim to develop an LSTM-based neural network model using Bidirectional Recurrent Neural Networks for recognizing the named entities in the text. 
+- The dataset used has a number of sentences, and each words have their tags. 
+- We have to vectorize these words using Embedding techniques to train our model.
+- Bidirectional Recurrent Neural Networks connect two hidden layers of opposite directions to the same output.
+<p align="center">
+<img width="350" src="https://user-images.githubusercontent.com/93427237/235588954-f733a2ec-a679-410f-b95c-8cc255aa1939.png">
+</p>
 
-## Neural Network Model
+</br></br>
 
 ## DESIGN STEPS
 ### STEP 1:
@@ -122,8 +127,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y,
 ```py
 input_word = layers.Input(shape=(max_len,))
 
-embedding_layer = layers.Embedding(input_dim=num_words,
-                                   output_dim=50,
+embedding_layer = layers.Embedding(input_dim=num_words,output_dim=50,
                                    input_length=max_len)(input_word)
 dropout = layers.SpatialDropout1D(0.1)(embedding_layer)
 
@@ -143,11 +147,8 @@ model.compile(optimizer="adam",
               metrics=["accuracy"])
 
 history = model.fit(
-    x=X_train,
-    y=y_train,
-    validation_data=(X_test,y_test),
-    batch_size=50, 
-    epochs=3,
+    x=X_train, y=y_train, validation_data=(X_test,y_test),
+    batch_size=50, epochs=3,
 )
 ```
 ### Metrics
@@ -176,8 +177,19 @@ for w, true, pred in zip(X_test[i], y_true, p[0]):
 | :------------------------------------------------------:| :-----------------------------------------------------------:|
 |![image](https://user-images.githubusercontent.com/93427237/235587601-662a7845-93ed-4bcd-a704-3ec10b64bdfe.png)| ![image](https://user-images.githubusercontent.com/93427237/235587615-d2385e35-20b8-484b-924e-e18e056cf433.png) |
 
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
 ### Sample Text Prediction
-![image](https://user-images.githubusercontent.com/93427237/235587712-c57a4412-d684-4e60-8296-400d5b399532.png)
+<p align="center">
+<img width="350" src="https://user-images.githubusercontent.com/93427237/235587712-c57a4412-d684-4e60-8296-400d5b399532.png">
+</p>
 
 ## RESULT
 Thus, an LSTM-based model for recognizing the named entities in the text is successfully developed.
