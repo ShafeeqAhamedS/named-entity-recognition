@@ -5,16 +5,32 @@
 To develop an LSTM-based model for recognizing the named entities in the text.
 
 ## Problem Statement and Dataset
+We aim to develop an LSTM-based neural network model using Bidirectional Recurrent Neural Networks for recognizing the named entities in the text. The dataset used has a number of sentences, and each words have their tags. We have to vectorize these words using Embedding techniques to train our model.Bidirectional Recurrent Neural Networks connect two hidden layers of opposite directions to the same output.
+![image](https://user-images.githubusercontent.com/93427237/235588954-f733a2ec-a679-410f-b95c-8cc255aa1939.png)
 
 ## Neural Network Model
 
 ## DESIGN STEPS
-
 ### STEP 1:
+Import the necessary packages.
 
 ### STEP 2:
+Read the dataset and fill the null values using forward fill.
 
 ### STEP 3:
+Create a list of words and tags. Also find the number of unique words and tags in the dataset.
+
+### STEP 4:
+Create a dictionary for the words and their Index values. Repeat the same for the tags as well.
+
+### STEP 5:
+We done this by padding the sequences and also to acheive the same length of input data.
+
+### STEP 6:
+We build the model using Input, Embedding, Bidirectional LSTM, Spatial Dropout, Time Distributed Dense Layers.
+
+### STEP 7:
+We compile the model to fit the train sets and validation sets.
 
 
 ## PROGRAM
@@ -156,10 +172,12 @@ for w, true, pred in zip(X_test[i], y_true, p[0]):
 ```
 ## OUTPUT
 
-### Training Loss, Validation Loss Vs Iteration Plot
+| Training Loss, Validation Loss Vs Iteration             | Accuracy, Validation Accuracy Vs Iteration                   |               
+| :------------------------------------------------------:| :-----------------------------------------------------------:|
+|![image](https://user-images.githubusercontent.com/93427237/235587601-662a7845-93ed-4bcd-a704-3ec10b64bdfe.png)| ![image](https://user-images.githubusercontent.com/93427237/235587615-d2385e35-20b8-484b-924e-e18e056cf433.png) |
 
 ### Sample Text Prediction
-
+![image](https://user-images.githubusercontent.com/93427237/235587712-c57a4412-d684-4e60-8296-400d5b399532.png)
 
 ## RESULT
 Thus, an LSTM-based model for recognizing the named entities in the text is successfully developed.
